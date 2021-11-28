@@ -9,15 +9,47 @@ public class MicTest : MonoBehaviour
     public float dbVal;
     public float pitchVal;
 
-    private const int QSamples = 1024;
+    private const int QSamples = 256;
     private const float RefValue = 0.1f;
-    private const float Threshold = 0.0002f;
+    private const float Threshold = 0.00002f;
 
     float[] _samples;
     private float[] _spectrum;
     private float _fSample;
+    private string _device;
+    private bool _isInitialized;
     
     private AudioSource audioSrc;
+    public static MicTest Instance { get; private set; }
+    
+    
+    void InitMic(){
+        // if(_device == null) _device = Microphone.devices[0];
+        // audioSrc.clip = Microphone.Start(_device, true, 10, 44100);
+        GameObject a = new GameObject("AudioSource");
+        audioSrc = a.AddComponent<AudioSource>();
+        Instantiate(a);
+
+        string deviceName = Microphone.devices[0];
+        audioSrc.clip = Microphone.Start(deviceName, true, 1000, 44100);
+        audioSrc.volume = 0.01f;
+        while (!(Microphone.GetPosition(null) > 0)) { }
+
+        audioSrc.Play();
+    }
+ 
+    void StopMicrophone()
+    {
+        Microphone.End(_device);
+    }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
+            Instance = this;
+    }
 
     void Start()
     {
@@ -25,24 +57,24 @@ public class MicTest : MonoBehaviour
         _spectrum = new float[QSamples];
         _fSample = AudioSettings.outputSampleRate;
         
-        
-        GameObject a = new GameObject("AudioSource");
-        audioSrc = a.AddComponent<AudioSource>();
-        Instantiate(a);
-
-        string deviceName = Microphone.devices[0];
-        audioSrc.clip = Microphone.Start(deviceName, true, 1000, 44100);
-        audioSrc.volume = 1f;
-        while (!(Microphone.GetPosition(null) > 0)) { }
-
-        audioSrc.Play();
+        InitMic();
+        // GameObject a = new GameObject("AudioSource");
+        // audioSrc = a.AddComponent<AudioSource>();
+        // Instantiate(a);
+        //
+        // string deviceName = Microphone.devices[0];
+        // // audioSrc.clip = Microphone.Start(deviceName, true, 1000, 44100);
+        // audioSrc.volume = 0.01f;
+        // while (!(Microphone.GetPosition(null) > 0)) { }
+        //
+        // audioSrc.Play();
     }
 
     void Update()
     {
         AnalyzeSound();
 
-        Debug.Log("RMS: " + rmsVal.ToString("F2"));
+        // Debug.Log("RMS: " + rmsVal.ToString("F2"));
         Debug.Log(dbVal.ToString("F1") + " dB");
         Debug.Log(pitchVal.ToString("F0") + " Hz");
     }
@@ -56,7 +88,7 @@ public class MicTest : MonoBehaviour
         {
             sum += _samples[i] * _samples[i]; // sum squared samples
         }
-
+        
         rmsVal = Mathf.Sqrt(sum / QSamples); // rms = square root of average
         dbVal = 20 * Mathf.Log10(rmsVal / RefValue); // calculate dB
         if (dbVal < -160) dbVal = -160; // clamp it to -160dB min
@@ -84,6 +116,45 @@ public class MicTest : MonoBehaviour
         }
 
         pitchVal = freqN * (_fSample / 2) / QSamples; // convert index to frequency
+    }
+    void OnEnable()
+    {
+        // InitMic();
+        _isInitialized=true;
+    }
+ 
+    //stop mic when loading a new level or quit application
+    void OnDisable()
+    {
+        StopMicrophone();
+    }
+ 
+    void OnDestroy()
+    {
+        StopMicrophone();
+    }
+ 
+ 
+    // make sure the mic gets started & stopped when application gets focused
+    void OnApplicationFocus(bool focus) {
+        if (focus)
+        {
+            //Debug.Log("Focus");
+         
+            if(!_isInitialized){
+                //Debug.Log("Init Mic");
+                InitMic();
+                _isInitialized=true;
+            }
+        }      
+        if (!focus)
+        {
+            //Debug.Log("Pause");
+            StopMicrophone();
+            //Debug.Log("Stop Mic");
+            _isInitialized=false;
+         
+        }
     }
 }
 
