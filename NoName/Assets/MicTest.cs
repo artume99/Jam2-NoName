@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MicTest : MonoBehaviour
 {
+    public static MicTest Instance { get; private set; }
+
     public float rmsVal;
     public float dbVal;
     public float pitchVal;
@@ -20,8 +22,15 @@ public class MicTest : MonoBehaviour
     private bool _isInitialized;
     
     private AudioSource audioSrc;
-    public static MicTest Instance { get; private set; }
     
+    
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
+            Instance = this;
+    }
     
     void InitMic(){
         // if(_device == null) _device = Microphone.devices[0];
@@ -41,14 +50,6 @@ public class MicTest : MonoBehaviour
     void StopMicrophone()
     {
         Microphone.End(_device);
-    }
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-            Destroy(gameObject);
-        else
-            Instance = this;
     }
 
     void Start()
@@ -75,8 +76,8 @@ public class MicTest : MonoBehaviour
         AnalyzeSound();
 
         // Debug.Log("RMS: " + rmsVal.ToString("F2"));
-        Debug.Log(dbVal.ToString("F1") + " dB");
-        Debug.Log(pitchVal.ToString("F0") + " Hz");
+        /*Debug.Log(dbVal.ToString("F1") + " dB");
+        Debug.Log(pitchVal.ToString("F0") + " Hz");*/
     }
 
     void AnalyzeSound()

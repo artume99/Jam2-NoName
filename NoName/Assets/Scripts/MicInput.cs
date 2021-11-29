@@ -5,6 +5,9 @@ using UnityEngine;
 public class MicInput : MonoBehaviour
 {
     
+    public static MicInput Instance { get; private set; }
+
+    
     public static float MicLoudness;
 
 
@@ -25,6 +28,15 @@ public class MicInput : MonoBehaviour
     private string _device;
     private AudioClip _clipRecord;
     int _sampleWindow = 128;
+    
+    
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
+            Instance = this;
+    }
  
     //mic initialization
     void InitMic(){
@@ -111,9 +123,9 @@ public class MicInput : MonoBehaviour
         MicLoudness = LevelMax ();
         AnalyzeSound();
         
-        Debug.Log("RMS: " + rmsVal.ToString("F2"));
+        /*Debug.Log("RMS: " + rmsVal.ToString("F2"));
         Debug.Log(dbVal.ToString("F1") + " dB");
-        Debug.Log(pitchVal.ToString("F0") + " Hz");
+        Debug.Log(pitchVal.ToString("F0") + " Hz");*/
     }
  
     bool _isInitialized;
