@@ -9,7 +9,6 @@ namespace GameJam2
     public class TaskElement : MonoBehaviour
     {
         [SerializeField] private ElementAction elementAction;
-        [SerializeField] private float minDistance;
         private List<FrequencyRange> _frequencyRangeList;
 
         private void Start()
@@ -35,7 +34,7 @@ namespace GameJam2
 
         private bool CheckDistance()
         {
-            return Mathf.Abs(transform.position.x - BatMovement.Instance.GetBatPosition().x) < minDistance;
+            return Mathf.Abs(transform.position.x - BatMovement.Instance.GetBatPosition().x) < elementAction.minDistance;
         }
 
         private bool CheckFrequencies()

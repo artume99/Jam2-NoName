@@ -376,7 +376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementAction: {fileID: 81371861}
-  minDistance: 3.5
 --- !u!114 &81371861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a7f5264ed4a77a2563b61dfa2fa5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDistance: 3.5
   spriteRenderer: {fileID: 81371856}
   rigidBody: {fileID: 81371859}
   pushForce: 1000000
