@@ -21,6 +21,11 @@ namespace GameJam2
             currentDistanceColor = spriteRenderer.color;
         }
 
+        public override void InitializeFrequencyRange()
+        {
+            normFreqRange.Add(new FrequencyRange(0.2f, 0.4f));
+        }
+
         public override void Action()
         {
             rigidBody.AddForce(Vector3.right * pushForce);

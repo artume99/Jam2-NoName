@@ -10,12 +10,12 @@ namespace GameJam2
     {
         [SerializeField] private ElementAction elementAction;
         [SerializeField] private float minDistance;
-        private List<FrequencyRange> normFreqRange = new List<FrequencyRange>();
-
+        private List<FrequencyRange> _frequencyRangeList;
 
         private void Start()
         {
-            normFreqRange.Add(new FrequencyRange(0.2f, 0.4f));
+            elementAction.InitializeFrequencyRange();
+            _frequencyRangeList = elementAction.GetFrequencyRangeList();
         }
 
         private void Update()
@@ -40,7 +40,7 @@ namespace GameJam2
 
         private bool CheckFrequencies()
         {
-            foreach (var frequencyRange in normFreqRange)
+            foreach (var frequencyRange in _frequencyRangeList)
             {
                 if (frequencyRange.GetStartValue() <= MicTest.Instance.pitchVal &&
                     MicTest.Instance.pitchVal <= frequencyRange.GetEndValue())
