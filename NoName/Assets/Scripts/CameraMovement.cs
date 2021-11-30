@@ -16,11 +16,17 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        var currPos = transform.position;
+
+        transform.position = new Vector3(lookAt.transform.position.x, currPos.y, currPos.z);
+
+        return;
+        
         Vector3 delta = Vector3.zero;
-        float deltaX = lookAt.position.x - transform.position.x;
+        float deltaX = lookAt.position.x - currPos.x;
         if (deltaX > boundX || deltaX < -boundX)
         {
-            if (transform.position.x < lookAt.position.x)
+            if (currPos.x < lookAt.position.x)
             {
                 delta.x = deltaX - boundX;
             }
@@ -30,10 +36,10 @@ public class CameraMovement : MonoBehaviour
             }
         }
 
-        float deltaY = lookAt.position.y - transform.position.y;
+        float deltaY = lookAt.position.y - currPos.y;
         if (deltaY > boundY || deltaY < -boundY)
         {
-            if (transform.position.y < lookAt.position.y)
+            if (currPos.y < lookAt.position.y)
             {
                 delta.y = deltaY - boundY;
             }

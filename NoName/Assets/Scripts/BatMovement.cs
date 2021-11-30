@@ -8,8 +8,12 @@ public class BatMovement : MonoBehaviour
     
 
     // Start is called before the first frame update
+    [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D rg;
     [SerializeField] private float speed = 10;
+
+    private bool isMoving;
+    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
 
     private void Awake()
     {
@@ -22,15 +26,32 @@ public class BatMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        var curr_position = transform.position;
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            rg.MovePosition(curr_position += Vector3.left * speed * Time.deltaTime);
+            MoveHorizontal(Vector3.left);
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            rg.MovePosition(curr_position += Vector3.right * speed * Time.deltaTime);
+            MoveHorizontal(Vector3.right);
         }
+        else
+        {
+            SetWalkAnimation(false);
+        }
+    }
+
+    private void MoveHorizontal(Vector3 dir)
+    {
+        transform.localEulerAngles = new Vector3(0, dir == Vector3.left ? 180 : 0, 0);
+        SetWalkAnimation(true);
+        rg.MovePosition(transform.position += dir * speed * Time.deltaTime);
+    }
+
+    private void SetWalkAnimation(bool moving)
+    {
+        if(moving != isMoving)
+            animator.SetBool(IsWalking, moving);
+        isMoving = moving;
     }
 
     public Vector3 GetBatPosition()

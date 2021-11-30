@@ -8,7 +8,8 @@ namespace GameJam2
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Rigidbody2D rigidBody;
         [SerializeField] private float pushForce;
-        
+        [SerializeField] private Vector3 pushDirection;
+
         private Color closeDistanceColor = Color.gray;
         private Color farDistanceColor = Color.white;
         private Color hitFrequencyColor = Color.black;
@@ -28,7 +29,7 @@ namespace GameJam2
 
         public override void Action()
         {
-            rigidBody.AddForce(Vector3.right * pushForce);
+            rigidBody.AddForce(pushDirection * pushForce);
         }
 
         public override void ShowDistanceFeedback(bool nearObject)
