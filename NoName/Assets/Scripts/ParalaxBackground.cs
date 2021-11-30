@@ -22,7 +22,7 @@ public class ParalaxBackground : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
         Vector3 deltaMove = cameraTransform.position - lastCameraPoistion;
         transform.position += new Vector3(deltaMove.x * parallaxEffectMultiplier.x, deltaMove
