@@ -76,14 +76,15 @@ public class MicTest : MonoBehaviour
         AnalyzeSound();
 
         // Debug.Log("RMS: " + rmsVal.ToString("F2"));
-        /*Debug.Log(dbVal.ToString("F1") + " dB");
-        Debug.Log(pitchVal.ToString("F0") + " Hz");*/
+        //Debug.Log(dbVal.ToString("F1") + " dB");
+        Debug.Log(pitchVal.ToString("F0") + " Hz");
     }
 
     void AnalyzeSound()
     {
-        audioSrc.GetOutputData(_samples, 0); // fill array with samples
         int i;
+
+        /*audioSrc.GetOutputData(_samples, 0); // fill array with samples
         float sum = 0;
         for (i = 0; i < QSamples; i++)
         {
@@ -92,7 +93,8 @@ public class MicTest : MonoBehaviour
         
         rmsVal = Mathf.Sqrt(sum / QSamples); // rms = square root of average
         dbVal = 20 * Mathf.Log10(rmsVal / RefValue); // calculate dB
-        if (dbVal < -160) dbVal = -160; // clamp it to -160dB min
+        if (dbVal < -160) dbVal = -160; // clamp it to -160dB min*/
+        
         // get sound spectrum
         audioSrc.GetSpectrumData(_spectrum, 0, FFTWindow.BlackmanHarris);
         float maxV = 0;

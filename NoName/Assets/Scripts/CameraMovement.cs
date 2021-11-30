@@ -18,9 +18,9 @@ public class CameraMovement : MonoBehaviour
     {
         var currPos = transform.position;
 
-        transform.position = new Vector3(lookAt.transform.position.x, currPos.y, currPos.z);
+        /*transform.position = new Vector3(lookAt.transform.position.x, currPos.y, currPos.z);
 
-        return;
+        return;*/
         
         Vector3 delta = Vector3.zero;
         float deltaX = lookAt.position.x - currPos.x;
