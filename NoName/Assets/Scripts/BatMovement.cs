@@ -44,7 +44,9 @@ public class BatMovement : MonoBehaviour
     {
         transform.localEulerAngles = new Vector3(0, dir == Vector3.left ? 180 : 0, 0);
         SetWalkAnimation(true);
-        rg.MovePosition(transform.position += dir * speed * Time.deltaTime);
+        // rg.MovePosition(transform.position += dir * speed * Time.deltaTime);
+        rg.velocity = new Vector2(dir.x * speed * Time.deltaTime, rg.velocity.y);
+        // rg.AddForce(dir * speed * Time.deltaTime);
     }
 
     private void SetWalkAnimation(bool moving)

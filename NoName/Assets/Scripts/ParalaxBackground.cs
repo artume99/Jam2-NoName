@@ -9,7 +9,7 @@ public class ParalaxBackground : MonoBehaviour
     private Transform cameraTransform;
     private Vector3 lastCameraPoistion;
     private float textureUnitSizeX;
-    // private float textureUnitSizeY; // incase we want to use inf. cave upwards
+    private float textureUnitSizeY; // incase we want to use inf. cave upwards
     
     void Start()
     {
@@ -17,8 +17,8 @@ public class ParalaxBackground : MonoBehaviour
         lastCameraPoistion = cameraTransform.position;
         Sprite sprite = GetComponent<SpriteRenderer>().sprite;
         Texture2D texture = sprite.texture;
-        textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
-        // textureUnitSizeY = texture.height / sprite.pixelsPerUnit;
+        textureUnitSizeX = (texture.width / sprite.pixelsPerUnit);
+        textureUnitSizeY = (texture.height / sprite.pixelsPerUnit);
     }
 
     // Update is called once per frame
@@ -28,16 +28,16 @@ public class ParalaxBackground : MonoBehaviour
         transform.position += new Vector3(deltaMove.x * parallaxEffectMultiplier.x, deltaMove
             .y * parallaxEffectMultiplier.y, 0);
         lastCameraPoistion = cameraTransform.position;
-        if (Mathf.Abs(cameraTransform.position.x - transform.position.x) >= textureUnitSizeX)
+        /*if (Mathf.Abs(cameraTransform.position.x - transform.position.x) >= textureUnitSizeX)
         {
-            float offsetPositionX = (cameraTransform.position.x - transform.position.x) % textureUnitSizeX;
+            var offsetPositionX = (cameraTransform.position.x - transform.position.x) % textureUnitSizeX;
             transform.position = new Vector3(cameraTransform.position.x + offsetPositionX, transform.position.y);
         }
-        
-        // if (Mathf.Abs(cameraTransform.position.x - transform.position.x) >= textureUnitSizeX)
-        // {
-        //     float offsetPositionY = (cameraTransform.position.y - transform.position.y) % textureUnitSizeY;
-        //     transform.position = new Vector3(cameraTransform.position.x , transform.position.y + offsetPositionY);
-        // }
+
+        if (Mathf.Abs(cameraTransform.position.x - transform.position.x) >= textureUnitSizeX)
+        {
+            var offsetPositionY = (cameraTransform.position.y - transform.position.y) % textureUnitSizeY;
+            transform.position = new Vector3(cameraTransform.position.x, transform.position.y + offsetPositionY);
+        }*/
     }
 }
