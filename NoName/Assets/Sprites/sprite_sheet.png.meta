@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 98b9cf3540438a54e91f9c6d32a6377c
+guid: ed4f9f90dfc36b9428eb337a47159ff8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 2
     mipBias: 0
     wrapU: 1
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cave_bottom_0
+      name: sprite_sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2af931ce78502654a98f5b07f699b111
-      internalID: 1490566728
+      spriteID: 861e3293bef8e154daf73e7cf961ce9b
+      internalID: 1548039421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_bottom_1
+      name: sprite_sheet_1
       rect:
         serializedVersion: 2
         x: 126
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dae188500541b0341ab3071558cee243
-      internalID: -1212255599
+      spriteID: 8c712f1a5cbc0a64a8f2e6a9d9a47335
+      internalID: 1194582074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_bottom_2
+      name: sprite_sheet_2
       rect:
         serializedVersion: 2
         x: 252
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1776c4a9a006cee4389319f5089bb869
-      internalID: -1671170648
+      spriteID: a3e90bd91b58a6141b70ada003e8058c
+      internalID: 1570137454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_bottom_3
+      name: sprite_sheet_3
       rect:
         serializedVersion: 2
         x: 378
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8b451e49f97abb40b896c657b8578c4
-      internalID: 1091740823
+      spriteID: 13755d0d7d1e66249b18f75076339953
+      internalID: -553940424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_bottom_4
+      name: sprite_sheet_4
       rect:
         serializedVersion: 2
         x: 504
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f617af6a300cde4ea93629bb17de580
-      internalID: -1020405751
+      spriteID: ea8d884a7f299e742b9310d1b78d653f
+      internalID: -1984402968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_bottom_5
+      name: sprite_sheet_5
       rect:
         serializedVersion: 2
         x: 630
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89682ee84f2c08d40a056e6a6d9f5f66
-      internalID: -1943851622
+      spriteID: ba2cb5533e12bbe4fa41374dec3f851c
+      internalID: 111042841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_bottom_6
+      name: sprite_sheet_6
       rect:
         serializedVersion: 2
         x: 756
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa214ee810092a64c973c57526bb97ac
-      internalID: 282265164
+      spriteID: 1e17aa680a4bde44b900262e3825dd66
+      internalID: -1130437175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_bottom_7
+      name: sprite_sheet_7
       rect:
         serializedVersion: 2
         x: 882
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbbdb855ddb250f4289349a99aef4452
-      internalID: 1968888663
+      spriteID: 5cba42cdf7d140c439588d9ccd879695
+      internalID: 1441171629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_bottom_8
+      name: sprite_sheet_8
       rect:
         serializedVersion: 2
         x: 1008
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b7781b2296cd7748a101a73332292a4
-      internalID: 509598074
+      spriteID: 2d45dacbef0004a44b1a2c1d8bef1053
+      internalID: 1292971144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cave_bottom_9
+      name: sprite_sheet_9
       rect:
         serializedVersion: 2
         x: 1134
-        y: 28
+        y: 0
         width: 126
-        height: 126
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,8 +355,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3db0943d2805b07458dc3da9cec775ca
-      internalID: 1097663304
+      spriteID: 1520ce160bece0647b67a9c5652b7906
+      internalID: 495025456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 0
+        width: 126
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda671208982d7142a04ce98cf757755
+      internalID: 6703477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 0
+        width: 126
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7229a5af16fac8f419d3650edc4d223b
+      internalID: 507517610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 0
+        width: 126
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d8d9154ced22f488c35a9c83095990
+      internalID: -872172958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 0
+        width: 126
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3752b714c7e4d4f81445d9b7c273b3
+      internalID: -165059286
       vertices: []
       indices: 
       edges: []
@@ -364,7 +448,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: aa238723db8c11f44abc949c3ca00399
     internalID: 0
     vertices: []
     indices: 
@@ -372,16 +456,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cave_bottom_7: 1968888663
-      cave_bottom_8: 509598074
-      cave_bottom_2: -1671170648
-      cave_bottom_6: 282265164
-      cave_bottom_4: -1020405751
-      cave_bottom_5: -1943851622
-      cave_bottom_0: 1490566728
-      cave_bottom_9: 1097663304
-      cave_bottom_1: -1212255599
-      cave_bottom_3: 1091740823
+      sprite_sheet_10: 6703477
+      sprite_sheet_7: 1441171629
+      sprite_sheet_3: -553940424
+      sprite_sheet_0: 1548039421
+      sprite_sheet_2: 1570137454
+      sprite_sheet_9: 495025456
+      sprite_sheet_11: 507517610
+      sprite_sheet_6: -1130437175
+      sprite_sheet_8: 1292971144
+      sprite_sheet_4: -1984402968
+      sprite_sheet_12: -872172958
+      sprite_sheet_5: 111042841
+      sprite_sheet_1: 1194582074
+      sprite_sheet_13: -165059286
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
