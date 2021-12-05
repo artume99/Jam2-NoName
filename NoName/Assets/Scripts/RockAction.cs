@@ -24,7 +24,7 @@ namespace GameJam2
 
         public override void InitializeFrequencyRange()
         {
-            normFreqRange.Add(new FrequencyRange(0.6f, 0.8f));
+            normFreqRange.Add(new FrequencyRange(0.2f, 0.4f));
         }
 
         public override void Action()

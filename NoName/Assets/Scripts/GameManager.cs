@@ -1,18 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance;
+    
+    // References
+    public TextManager textManager;
+    public BatMovement bat;
+    private void Awake()
     {
-        
+        if (GameManager.Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        textManager.ShowText(3,"Clap Your Hands");
     }
 }

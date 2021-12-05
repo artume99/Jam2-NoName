@@ -12,7 +12,7 @@ namespace GameJam2
             this.startValue = startValue;
             this.endValue = endValue;
             
-            if(startValue is < 0 or > 1 || endValue is < 0 or > 1)
+            if(startValue is < 0 or > 2 || endValue is < 0 or > 2)
                 Debug.LogError("FrequencyRange values should be normalized!");
         }
 
