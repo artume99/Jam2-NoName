@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +17,11 @@ public class MicTest : MonoBehaviour
     private const float Threshold = 0.00002f;
 
     float[] _samples;
+
+    private int pitchSamplesInd;
+    private int _numOfPitchSamples = 150;
+    private float[] _lastPitchSamples;
+    
     private float[] _spectrum;
     private float _fSample;
     private string _device;
@@ -54,6 +60,7 @@ public class MicTest : MonoBehaviour
 
     void Start()
     {
+        _lastPitchSamples = new float[_numOfPitchSamples];
         _samples = new float[QSamples];
         _spectrum = new float[QSamples];
         _fSample = AudioSettings.outputSampleRate;
@@ -71,14 +78,43 @@ public class MicTest : MonoBehaviour
         // audioSrc.Play();
     }
 
-    void Update()
+    private void Update()
     {
         AnalyzeSound();
+    }
+
+    void FixedUpdate()
+    {
 
         // Debug.Log("RMS: " + rmsVal.ToString("F2"));
         //Debug.Log(dbVal.ToString("F1") + " dB");
         Debug.Log(pitchVal.ToString("F0") + " Hz");
     }
+
+
+
+    public float CheckPitchSamples(float startValue, float endValue, int samplesNum = 50)
+    {
+        float sum = 0;
+
+        int insideCounter = 0;
+        
+        //Debug.Log(_lastPitchSamples.Count);
+        foreach (var lastPitchSample in _lastPitchSamples)
+        {
+            if (lastPitchSample >= startValue && lastPitchSample <= endValue)
+            {
+                sum += lastPitchSample;
+                insideCounter++;
+            }
+           
+            if (insideCounter >= samplesNum)
+                return sum / samplesNum;
+        }
+
+        return sum / samplesNum;
+    }
+    
 
     void AnalyzeSound()
     {
@@ -119,7 +155,12 @@ public class MicTest : MonoBehaviour
         }
 
         pitchVal = freqN * (_fSample / 2) / QSamples; // convert index to frequency
+        
+        _lastPitchSamples[pitchSamplesInd % _numOfPitchSamples] = pitchVal;
+        pitchSamplesInd++;
+
     }
+    
     void OnEnable()
     {
         // InitMic();
