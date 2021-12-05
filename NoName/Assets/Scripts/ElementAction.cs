@@ -5,6 +5,7 @@ namespace GameJam2
 {
     public abstract class ElementAction : MonoBehaviour
     {
+        [SerializeField] internal int samplesNum = 100;
         public float minDistance;
         internal List<FrequencyRange> normFreqRange = new List<FrequencyRange>();
 

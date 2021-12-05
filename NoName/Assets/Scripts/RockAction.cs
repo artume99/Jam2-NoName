@@ -30,11 +30,12 @@ namespace GameJam2
         public override void Action()
         {
             rigidBody.AddForce(pushDirection * pushForce);
+            SoundManager.Instance.PlaySound(SoundManager.SoundType.Stone);
         }
 
         public override void ShowDistanceFeedback(bool nearObject)
         {
-            if (actionDone)
+            /*if (actionDone)
                 return;
             
             Color? color = null;
@@ -46,16 +47,16 @@ namespace GameJam2
             {
                 currentDistanceColor = color.Value;
                 spriteRenderer.color = currentDistanceColor;
-            }
+            }*/
         }
 
         public override void ShowFrequencyFeedback(bool rightFrequency)
         {
-            if (!rightFrequency)
+            /*if (!rightFrequency)
                 return;
             
             actionDone = true;
-            spriteRenderer.color = hitFrequencyColor;
+            spriteRenderer.color = hitFrequencyColor;*/
         }
     }
 }

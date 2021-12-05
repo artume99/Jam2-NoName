@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameJam2;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class GameManager : MonoBehaviour
     public BatMovement bat;
     private void Awake()
     {
-        if (GameManager.Instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
@@ -20,6 +22,20 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
     }
+
+  
+    public void SaveState(Vector2 pos)
+    {
+        PlayerState.SaveState(pos);
+    }
+
+    public void GameOver()
+    {
+        var lastState = PlayerState.GetState();
+        BatMovement.Instance.transform.position = lastState;
+
+    }
+    
 
     // Update is called once per frame
     private void Start()

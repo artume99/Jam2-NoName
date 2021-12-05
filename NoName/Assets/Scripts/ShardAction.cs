@@ -20,22 +20,16 @@ namespace GameJam2
         public override void Action()
         {
             fallAnimator.SetTrigger("Fall");
+            SoundManager.Instance.PlaySound(SoundManager.SoundType.Stalactite);
         }
 
         public override void ShowDistanceFeedback(bool nearObject)
         {
-            if (actionDone)
-                return;
-            
-            
+
         }
 
         public override void ShowFrequencyFeedback(bool rightFrequency)
         {
-            if (!rightFrequency)
-                return;
-            
-            actionDone = true;
             
         }
     }

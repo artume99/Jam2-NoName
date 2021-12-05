@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -11,6 +12,7 @@ public class BatMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D rg;
     [SerializeField] private float speed = 10;
+    private float _minYValue = -12f;
 
     private bool isMoving;
     private static readonly int IsWalking = Animator.StringToHash("IsWalking");
@@ -38,15 +40,23 @@ public class BatMovement : MonoBehaviour
         {
             SetWalkAnimation(false);
         }
+        
+    }
+
+    private void LateUpdate()
+    {
+        if (transform.position.y < _minYValue)
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 
     private void MoveHorizontal(Vector3 dir)
     {
         transform.localEulerAngles = new Vector3(0, dir == Vector3.left ? 180 : 0, 0);
         SetWalkAnimation(true);
-        // rg.MovePosition(transform.position += dir * speed * Time.deltaTime);
         rg.velocity = new Vector2(dir.x * speed * Time.deltaTime, rg.velocity.y);
-        // rg.AddForce(dir * speed * Time.deltaTime);
+        SoundManager.Instance.PlaySound(SoundManager.SoundType.Walking);
     }
 
     private void SetWalkAnimation(bool moving)
