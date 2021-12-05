@@ -14,7 +14,7 @@ public class MicTest : MonoBehaviour
 
     private const int QSamples = 256;
     private const float RefValue = 0.1f;
-    private const float Threshold = 0.00002f;
+    private const float Threshold = 0.000002f;
 
     float[] _samples;
 
@@ -109,7 +109,7 @@ public class MicTest : MonoBehaviour
             }
            
             if (insideCounter >= samplesNum)
-                return sum / samplesNum;
+                return sum / insideCounter;
         }
 
         return sum / samplesNum;

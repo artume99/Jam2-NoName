@@ -12,7 +12,8 @@ namespace GameJam2
         [SerializeField] private float maxOuter;
         [SerializeField] private float maxInner;
 
-        private float clapFrequency = 1200;
+        private float clapFrequencyLower = 1400;
+        private float clapFrequencyUpper = 2200;
         private bool clapped;
         private bool expand = true;
 
@@ -33,13 +34,8 @@ namespace GameJam2
 
         private void CheckClap()
         {
-            var avg = MicTest.Instance.CheckPitchSamples(300f, 2200f, 8);
-            
-            if(avg != 0)
-                Debug.Log("avg is: " + avg + " ------------");
-            
-            return;
-            if (MicTest.Instance.pitchVal > clapFrequency)
+            var avg = MicTest.Instance.CheckPitchSamples(clapFrequencyLower, clapFrequencyUpper, 20);
+            if ( avg >= clapFrequencyLower&&avg <= clapFrequencyUpper)
             {
                 StartCoroutine(ExpandLight());
                 clapped = true;
