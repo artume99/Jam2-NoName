@@ -6,18 +6,16 @@ using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
-    public TypeOutScript text;
+    public Text text;
 
     // Update is called once per frame
     public void ShowText(float typingTime, string textToShow)
     {
-        text.TotalTypeTime = typingTime;
-        text.FinalText = textToShow;
-        text.On = true;
+        text.text = textToShow;
     }
 
     public void TurnOffText()
     {
-        text.reset = true;
+        text.text = "";
     }
 }

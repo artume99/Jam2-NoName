@@ -36,7 +36,9 @@ namespace GameJam2
         public override void ShowDistanceFeedback(bool nearObject)
         {
             if (actionDone)
+            {
                 return;
+            }
             
             /*Color? color = null;
             if (nearObject && currentDistanceColor != closeDistanceColor)

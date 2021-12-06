@@ -106,7 +106,7 @@ public class MicTest : MonoBehaviour
                 return sum / insideCounter;
         }
 
-        return 1;
+        return sum/samplesNum;
     }
     
 
