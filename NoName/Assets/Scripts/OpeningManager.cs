@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class OpeningManager : MonoBehaviour
 {
     private const string ThemeSound = "ThemeSound";
+    [SerializeField] private LevelLoader lvlLoad;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class OpeningManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Game");
+        lvlLoad.LoadNextLevel();
     }
 
     public void Exit()

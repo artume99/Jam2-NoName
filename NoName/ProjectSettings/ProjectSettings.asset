@@ -584,7 +584,7 @@ PlayerSettings:
   enableCrashReportAPI: 0
   cameraUsageDescription: 
   locationUsageDescription: 
-  microphoneUsageDescription: 
+  microphoneUsageDescription: use microphone
   bluetoothUsageDescription: 
   switchNMETAOverride: 
   switchNetLibKey: 
