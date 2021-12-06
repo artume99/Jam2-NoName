@@ -9,7 +9,7 @@ namespace GameJam2
         [SerializeField] private Animator fallAnimator;
         [SerializeField] private Vector2 range;
 
-        private bool actionDone;
+        internal bool actionDone;
         
 
         public override void InitializeFrequencyRange()
@@ -19,13 +19,15 @@ namespace GameJam2
 
         public override void Action()
         {
+            if (actionDone)
+                return;
+            actionDone = true;
             fallAnimator.SetTrigger("Fall");
             SoundManager.Instance.PlaySound(SoundManager.SoundType.Stalactite);
         }
 
         public override void ShowDistanceFeedback(bool nearObject)
         {
-
         }
 
         public override void ShowFrequencyFeedback(bool rightFrequency)

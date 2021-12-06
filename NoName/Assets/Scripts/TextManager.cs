@@ -13,13 +13,11 @@ public class TextManager : MonoBehaviour
     {
         text.TotalTypeTime = typingTime;
         text.FinalText = textToShow;
-        /*text.transform.position = place.position;*/
-        text.GetComponent<Text>().enabled = true;
-        /*text.enabled = true;*/
+        text.On = true;
     }
 
     public void TurnOffText()
     {
-        text.GetComponent<Text>().enabled = false;
+        text.reset = true;
     }
 }

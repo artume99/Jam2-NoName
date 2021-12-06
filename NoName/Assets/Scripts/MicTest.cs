@@ -39,12 +39,16 @@ public class MicTest : MonoBehaviour
     }
     
     void InitMic(){
-        // if(_device == null) _device = Microphone.devices[0];
-        // audioSrc.clip = Microphone.Start(_device, true, 10, 44100);
+        
+        if (audioSrc != null && audioSrc.gameObject != null)
+        {
+            Destroy(audioSrc.gameObject);
+        }
+
         GameObject a = new GameObject("AudioSource");
         audioSrc = a.AddComponent<AudioSource>();
-        Instantiate(a);
-
+        //Instantiate(a);
+        
         string deviceName = Microphone.devices[0];
         audioSrc.clip = Microphone.Start(deviceName, true, 1000, 44100);
         audioSrc.volume = 0.01f;
@@ -66,16 +70,6 @@ public class MicTest : MonoBehaviour
         _fSample = AudioSettings.outputSampleRate;
         
         InitMic();
-        // GameObject a = new GameObject("AudioSource");
-        // audioSrc = a.AddComponent<AudioSource>();
-        // Instantiate(a);
-        //
-        // string deviceName = Microphone.devices[0];
-        // // audioSrc.clip = Microphone.Start(deviceName, true, 1000, 44100);
-        // audioSrc.volume = 0.01f;
-        // while (!(Microphone.GetPosition(null) > 0)) { }
-        //
-        // audioSrc.Play();
     }
 
     private void Update()
@@ -88,7 +82,7 @@ public class MicTest : MonoBehaviour
 
         // Debug.Log("RMS: " + rmsVal.ToString("F2"));
         //Debug.Log(dbVal.ToString("F1") + " dB");
-        /*Debug.Log(pitchVal.ToString("F0") + " Hz");*/
+        //Debug.Log(pitchVal.ToString("F0") + " Hz");
     }
 
 
@@ -118,6 +112,9 @@ public class MicTest : MonoBehaviour
 
     void AnalyzeSound()
     {
+        if (audioSrc == null)
+            return;
+        
         int i;
 
         /*audioSrc.GetOutputData(_samples, 0); // fill array with samples

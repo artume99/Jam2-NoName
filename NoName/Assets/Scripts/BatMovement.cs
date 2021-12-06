@@ -7,7 +7,6 @@ public class BatMovement : MonoBehaviour
 {
     public static BatMovement Instance { get; private set; }
     
-
     // Start is called before the first frame update
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D rg;
@@ -69,5 +68,11 @@ public class BatMovement : MonoBehaviour
     public Vector3 GetBatPosition()
     {
         return transform.position;
+    }
+
+    public void Freeze(bool toFreeze)
+    {
+        rg.constraints = toFreeze ? RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+
     }
 }
