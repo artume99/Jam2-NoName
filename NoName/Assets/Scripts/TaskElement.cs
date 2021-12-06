@@ -42,7 +42,7 @@ namespace GameJam2
             foreach (var frequencyRange in _frequencyRangeList)
             {
                 var avg = MicTest.Instance.CheckPitchSamples(frequencyRange.GetStartValue(), frequencyRange.GetEndValue(), elementAction.samplesNum);
-                Debug.Log("--avg: " + avg + " ---------------------");
+                /*Debug.Log("--avg: " + avg + " ---------------------");*/
                 if (frequencyRange.GetStartValue() <= avg && avg <= frequencyRange.GetEndValue())
                     return true;
             }

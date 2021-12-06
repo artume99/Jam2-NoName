@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bat
+  - Missile
+  - Rock
+  - Shard
   layers:
   - Default
   - TransparentFX
