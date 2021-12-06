@@ -15,10 +15,10 @@ public class RisingPlatform : MonoBehaviour
     private GameObject o;
     
     
-    private void Update()
+    private void FixedUpdate()
     {
         if(o)
-            if (Math.Abs(o.transform.position.y - transform.position.y) > 3)
+            if (Math.Abs(o.transform.position.y - transform.position.y) > 5)
                 rocked = false;
         if (rocked)
         {

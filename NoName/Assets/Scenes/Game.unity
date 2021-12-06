@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7111,7 +7111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &243345948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7288,7 +7288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246434533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 57.03, y: -2.39, z: 0}
+  m_LocalPosition: {x: -37.3, y: -1.6, z: 0}
   m_LocalScale: {x: 0.64645, y: 0.64645, z: 0.64645}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7492,7 +7492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd341d0055eea2c4aaf180c567304e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minYValue: -14
+  minYValue: -20
 --- !u!1 &381875107
 GameObject:
   m_ObjectHideFlags: 0
@@ -7731,7 +7731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405468675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.649765, y: -7.504046, z: 1.2805656}
+  m_LocalPosition: {x: 3.649765, y: -8.06, z: 1.2805656}
   m_LocalScale: {x: 3.975, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14737,7 +14737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776255345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.39, y: -8.98, z: 0}
+  m_LocalPosition: {x: 26.34, y: -8.02, z: 0}
   m_LocalScale: {x: 1, y: 1.0149004, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15078,6 +15078,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &798262366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2134621135098558050, guid: 571044478b4a64541990678ca588e04e, type: 3}
+  m_PrefabInstance: {fileID: 2134621134177065003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &825520599
 GameObject:
   m_ObjectHideFlags: 0
@@ -17381,7 +17386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textManager: {fileID: 462468659}
   bat: {fileID: 246434536}
-  shardsContainer: {fileID: 2000514633}
+  shardsContainer: {fileID: 798262366}
   shardsPrefab: {fileID: 2134621135098558050, guid: 571044478b4a64541990678ca588e04e, type: 3}
   whiteScreen: {fileID: 28014555}
 --- !u!4 &1394252821
@@ -18927,11 +18932,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2000514633 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2134621135098558050, guid: 571044478b4a64541990678ca588e04e, type: 3}
-  m_PrefabInstance: {fileID: 2134621134177065003}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2025082194
 GameObject:
   m_ObjectHideFlags: 0
