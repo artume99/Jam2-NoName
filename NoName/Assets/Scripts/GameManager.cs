@@ -13,12 +13,13 @@ public class GameManager : MonoBehaviour
     
     // References
     public TextManager textManager;
-    public BatMovement bat;
     public GameObject shardsContainer;
+    public GameObject thirdPart;
     
     // Prefabs
     public GameObject shardsPrefab;
-
+    public GameObject thirdPartPrefab;
+    
     public Image whiteScreen;
     
     
@@ -53,6 +54,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(shardsContainer.gameObject);
             shardsContainer = Instantiate(shardsPrefab, null, false);
+        }
+        else
+        {
+            Destroy(thirdPart.gameObject);
+            thirdPart = Instantiate(thirdPartPrefab, null, false);
         }
     }
 

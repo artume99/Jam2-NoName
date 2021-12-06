@@ -12,7 +12,7 @@ namespace GameJam2
         [SerializeField] private float maxOuter;
         [SerializeField] private float maxInner;
 
-        private float clapFrequencyLower = 500;
+        private float clapFrequencyLower = 1200;
         private float clapFrequencyUpper = 2200;
         private bool clapped;
         private bool expand = true;
