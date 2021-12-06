@@ -40,6 +40,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        textManager.ShowText(3,"Clap Your Hands");
+        textManager.ShowText(3,"Clap");
     }
 }

@@ -24,7 +24,7 @@ namespace GameJam2
 
         public override void InitializeFrequencyRange()
         {
-            normFreqRange.Add(new FrequencyRange(0.2f, 0.4f));
+            normFreqRange.Add(new FrequencyRange(0.4f, 0.6f));
         }
 
         public override void Action()
@@ -35,10 +35,10 @@ namespace GameJam2
 
         public override void ShowDistanceFeedback(bool nearObject)
         {
-            /*if (actionDone)
+            if (actionDone)
                 return;
             
-            Color? color = null;
+            /*Color? color = null;
             if (nearObject && currentDistanceColor != closeDistanceColor)
                 color = closeDistanceColor;
             else if (!nearObject && currentDistanceColor != farDistanceColor)
@@ -47,16 +47,16 @@ namespace GameJam2
             {
                 currentDistanceColor = color.Value;
                 spriteRenderer.color = currentDistanceColor;
-            }*/
+            }#1#*/
         }
 
         public override void ShowFrequencyFeedback(bool rightFrequency)
         {
-            /*if (!rightFrequency)
+            if (!rightFrequency)
                 return;
             
             actionDone = true;
-            spriteRenderer.color = hitFrequencyColor;*/
+            spriteRenderer.color = hitFrequencyColor;
         }
     }
 }

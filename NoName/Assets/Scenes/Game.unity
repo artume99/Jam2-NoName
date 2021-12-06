@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515284, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: samplesNum
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515286, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: m_RootOrder
@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515284, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: samplesNum
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515286, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: m_RootOrder
@@ -1450,6 +1450,14 @@ PrefabInstance:
     - target: {fileID: 5984477994825725113, guid: 29eb522bebeb9b44e8020104e5628344, type: 3}
       propertyPath: m_Name
       value: HeavyStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984477994825725115, guid: 29eb522bebeb9b44e8020104e5628344, type: 3}
+      propertyPath: samplesNum
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984477994825725115, guid: 29eb522bebeb9b44e8020104e5628344, type: 3}
+      propertyPath: minDistance
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29eb522bebeb9b44e8020104e5628344, type: 3}
@@ -7049,7 +7057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246434533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.17, y: -0.17, z: 0}
+  m_LocalPosition: {x: -9.1, y: -0.17, z: 0}
   m_LocalScale: {x: 0.64645, y: 0.64645, z: 0.64645}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14389,7 +14397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515284, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: samplesNum
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515286, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: m_RootOrder
@@ -15088,7 +15096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515284, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: samplesNum
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515286, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: m_RootOrder
@@ -17569,6 +17577,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeavyStone
       objectReference: {fileID: 0}
+    - target: {fileID: 5984477994825725115, guid: 29eb522bebeb9b44e8020104e5628344, type: 3}
+      propertyPath: samplesNum
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984477994825725115, guid: 29eb522bebeb9b44e8020104e5628344, type: 3}
+      propertyPath: minDistance
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29eb522bebeb9b44e8020104e5628344, type: 3}
 --- !u!1001 &8869017932195021746
@@ -17592,7 +17608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515284, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: samplesNum
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8869017931244515286, guid: 4be34f1efd078c140b027925f8e241f6, type: 3}
       propertyPath: m_RootOrder
