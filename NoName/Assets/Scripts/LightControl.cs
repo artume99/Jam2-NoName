@@ -36,7 +36,7 @@ namespace GameJam2
 
         private void CheckClap()
         {
-            var avg = MicTest.Instance.CheckPitchSamples(clapFrequencyLower, clapFrequencyUpper, 20);
+            var avg = MicTest.Instance.CheckPitchSamples(clapFrequencyLower, clapFrequencyUpper, 5);
             if ( avg >= clapFrequencyLower&&avg <= clapFrequencyUpper)
             {
                 StartCoroutine(ExpandLight());

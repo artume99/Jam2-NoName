@@ -72,7 +72,7 @@ public class BatMovement : MonoBehaviour
 
     public void Freeze(bool toFreeze)
     {
-        rg.constraints = toFreeze ? RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+        //rg.constraints = toFreeze ? RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
 
     }
 }

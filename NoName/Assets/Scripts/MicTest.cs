@@ -74,15 +74,15 @@ public class MicTest : MonoBehaviour
 
     private void Update()
     {
-        AnalyzeSound();
+        
     }
 
     void FixedUpdate()
     {
-
+        AnalyzeSound();
         // Debug.Log("RMS: " + rmsVal.ToString("F2"));
         //Debug.Log(dbVal.ToString("F1") + " dB");
-        //Debug.Log(pitchVal.ToString("F0") + " Hz");
+        Debug.Log(pitchVal.ToString("F0") + " Hz");
     }
 
 

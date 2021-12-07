@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a7f5264ed4a77a2563b61dfa2fa5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  samplesNum: 10
+  samplesNum: 50
   minDistance: 7
   spriteRenderer: {fileID: 5984477994825725111}
   rigidBody: {fileID: 5984477994825725109}
